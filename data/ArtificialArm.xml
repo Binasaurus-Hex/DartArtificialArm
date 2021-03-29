@@ -1,0 +1,26 @@
+<Skeleton name="ArtificialArm">
+    <Node name="scapula" parent="None">
+        <Body type="Box" mass="1" size="0.17 0.15 0.06" obj="scapula.obj" obj_offset="-0.12 0.016 -0.012" contact="fOn">
+            <Transformation linear="1.0 0.0 0.0 0.0 1.0 0.0 0.0 0 1.0" translation="0.11 0.082 0"/>
+        </Body>
+        <Joint type="Weld">
+            <Transformation linear="1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0" translation="0 0 0"/>
+        </Joint>
+    </Node>
+    <Node name="humerus" parent="scapula">
+        <Body type="Box" mass="1" size="0.04 0.258417 0.05" obj="humerus.obj" obj_offset="0.006 0.05 0" contact="fOn">
+            <Transformation linear="1.0 0 0.0 0 1.0 0.0 0.0 0.0 1.0" translation="0 0 0"/>
+        </Body>
+        <Joint type="Ball" lower="-0.5 -0.7 -0.5" upper="0.5 0.6 0.5">
+            <Transformation linear="1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0" translation="0.01 0.13 0"/>
+        </Joint>
+    </Node>
+    <Node name="radius" parent="humerus">
+        <Body type="Box" mass="1" size="0.04 0.238644 0.05" obj="radius.obj" obj_offset="0 0.105 0" contact="fOn">
+            <Transformation linear="1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0" translation="0 -0.2485305 0"/>
+        </Body>
+        <Joint type="Revolute" lower="-0.1" upper="4" axis="0 0 1">
+            <Transformation linear="1.0 0.0 0.0 0.0 1.0 0.0 90 0.0 1.0" translation="0 -0.125 0"/>
+        </Joint>
+    </Node>
+</Skeleton>

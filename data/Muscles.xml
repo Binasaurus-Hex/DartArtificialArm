@@ -1,0 +1,24 @@
+<Muscle>
+    <Unit name="biceps" f0="1000.000000" lm="1.2000000" lt="0.200000" pen_angle="0.00000" lmax="-0.100000">
+        <Waypoint body="humerus" p="0 0.07 0.02" />
+        <Waypoint body="radius" p="0 -0.17 0.02" />
+    </Unit>
+    <Unit name="triceps" f0="1000.000000" lm="1.2000000" lt="0.200000" pen_angle="0.00000" lmax="-0.100000">
+        <Waypoint body="humerus" p="0 0.07 -0.02" />
+        <Waypoint body="humerus" p="0 -0.09 -0.02" />
+        <Waypoint body="radius" p="0 -0.13 -0.03" />
+        <Waypoint body="radius" p="0 -0.17 -0.02" />
+    </Unit>
+    <Unit name="rotatorForward" f0="1000.000000" lm="1.200000" lt="0.200000" pen_angle="0.00000" lmax="-0.100000">
+        <Waypoint body="scapula" p="0.1 0.1 0.03"/>
+        <Waypoint body="humerus" p="-0.01 0.13 0.02"/>
+    </Unit>
+    <Unit name="rotatorBack" f0="1000.000000" lm="1.200000" lt="0.200000" pen_angle="0.00000" lmax="-0.100000">
+        <Waypoint body="scapula" p="0.1 0.1 -0.03"/>
+        <Waypoint body="humerus" p="-0.01 0.13 -0.02"/>
+    </Unit>
+    <Unit name="rotatorTop" f0="1000.000000" lm="1.200000" lt="0.200000" pen_angle="0.00000" lmax="-0.100000">
+        <Waypoint body="scapula" p="0.1 0.16 0"/>
+        <Waypoint body="humerus" p="-0.01 0.15 0"/>
+    </Unit>
+</Muscle>

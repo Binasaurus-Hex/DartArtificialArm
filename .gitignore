@@ -1,0 +1,6 @@
+*.csv
+*.so
+training/joint_acceleration_to_muscle_activation_network
+cmake-build-debug
+*.idea
+*.a
