@@ -11,15 +11,33 @@ using namespace dart::dynamics;
 using namespace dart::simulation;
 using namespace dart::gui::glut;
 
-int main(int argc, char* argv[]){
-    std::string skeletonFile = "../data/ArtificialArm.xml";
-    std::string muscleFile = "../data/Muscles.xml";
-    std::string groundFile = "../data/ground.xml";
+PhysicalEnvironment* getEnv(){
+    std::string skeletonFile = "../../data/ArtificialArm.xml";
+    std::string muscleFile = "../../data/Muscles.xml";
+    std::string groundFile = "../../data/ground.xml";
 
     ArtificialArm* arm = WorldUtils::loadFromFiles(skeletonFile, muscleFile, true);
     Ground* ground = WorldUtils::loadFromFiles(groundFile);
 
-    PhysicalEnvironment* physicalEnvironment = new PhysicalEnvironment(arm,ground);
+    return new PhysicalEnvironment(arm,ground);
+}
+
+void test(int argc, char* argv[]){
+    PhysicalEnvironment* environment = getEnv();
+    auto limits = environment->arm->skeleton->getPositionLowerLimits();
+    EnvWindow* envWindow = new EnvWindow(environment);
+    glutInit(&argc, argv);
+    envWindow->initWindow(1920, 1080, "playground");
+    glutMainLoop();
+}
+
+int main(int argc, char* argv[]){
+    if(*argv[1] == 't'){
+        test(argc,argv);
+        return 0;
+    }
+
+    PhysicalEnvironment* physicalEnvironment = getEnv();
 
     Eigen::VectorXd* activations = new Eigen::VectorXd(5);
     activations->setZero();

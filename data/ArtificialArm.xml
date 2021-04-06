@@ -23,4 +23,12 @@
             <Transformation linear="1.0 0.0 0.0 0.0 1.0 0.0 90 0.0 1.0" translation="0 -0.125 0"/>
         </Joint>
     </Node>
+    <Node name="wrist" parent="radius">
+        <Body type="Box" mass="1" size="0.03 0.03 0.03">
+            <Transformation linear="1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0" translation="0 -0.36 0"/>
+        </Body>
+        <Joint type="Weld">
+            <Transformation linear="1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0" translation="0 0 0"/>
+        </Joint>
+    </Node>
 </Skeleton>
